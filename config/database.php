@@ -8,10 +8,11 @@
     $dbname="schoolar"; // nombre de la base de datos 
     $user="postgres"; // usuario
     $password ="postgres"; //contraseña, luego usamos variables de entorno
+    //con es quien tiene la llave de toda la casa, tiene todos los privilegios. gi
     
 
 // Create connetion 
-$conn = pg_connect(" //$con es quien tiene la llave de toda la casa, tiene todos los privilegios. 
+$conn = pg_connect(" 
     host = $host
     port = $port
     dbname=$dbname
@@ -30,6 +31,6 @@ if(!$conn){// si la conexion no se dio
 
 }
 
-pg_close(); // esta linea abre conexion y luego dada la conexion debe cerrar el puerto
+//pg_close(); // esta linea abre conexion y luego dada la conexion debe cerrar el puerto
 
 ?>
