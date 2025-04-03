@@ -17,17 +17,19 @@ $sql_email_exist = "
    SELECT 
       COUNT(email) as total  
    FROM 
-      user 
+      users
    WHERE  
       email ='$email' 
-      LIMIT 1 ";
+      LIMIT 1 
+   
+   ";
 
 $res= pg_query($conn, $sql_email_exist);
 
 if($res){
    $row = pg_fetch_assoc($res);
    if($row['total']>0){
-      echo "Email already exist";
+      echo " Email already exist";
    }
    else{
       $sql ="INSERT INTO users( firstname, lastname, email, password)
