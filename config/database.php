@@ -35,9 +35,9 @@ $conn = pg_connect("
 // verificamos si la conexion se dio 
 
 if(!$conn){// si la conexion no se dio 
-    die("Connection error: ".pg_last_error());
+    //die("Connection error: ".pg_last_error());
 }else{
-    echo"Success connection";
+    //echo"Success connection";
 
 }
 
