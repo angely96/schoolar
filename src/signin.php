@@ -15,7 +15,7 @@
 
     $sql = "
         select 
-            --id,
+            id,
             COUNT(id) as total
         from 
             users
@@ -33,8 +33,8 @@
         $row = pg_fetch_assoc($res);
         if($row['total']>0){
            //echo "Login Ok ";
-           $_SESSION['user_id']=$row['id'];
-           header('Refresh:0; url=http://localhost/schoolar/src/home.php');
+            $_SESSION['user_id']=$row['id'];
+            header('Refresh:0; url=http://localhost/schoolar/src/home.php');
 
         }else{
             echo"Login failed";
