@@ -27,7 +27,7 @@
         <tr><td><input type="email" name="e_mail" placeholder="joe@gmai.com"></td></tr>
         <tr><td><input type="password" name="p_sswd" placeholder="Password"required></td></tr>
         
-        <tr><td align="center"><button>Register</button></td></tr>
+        <tr><td align="center"><button>Ingresar</button></td></tr>
         
     </table>    
     </form>
