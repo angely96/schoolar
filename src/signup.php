@@ -41,7 +41,7 @@ if($res){
       if($res){
          //echo"User has been created succesfully";
          echo"<script>alert('User has been created. Go to login')</script>";
-         header('Refresh:0; url=http://localhost/schoolar/src/signin.html');
+         header('Refresh:0; url=http://localhost/schoolar/src/signin.php');
          }else {
             echo"Error ";
          }
