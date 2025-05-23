@@ -1,4 +1,4 @@
-<?
+<?php
 include('../config/database.php');
 ?>
 
@@ -16,26 +16,47 @@ include('../config/database.php');
             <th>Last name</th>
             <th>E-mail</th>
             <th>Status</th>
+            <th>Photo</th>
             <th>....</th>
         </tr>
-        <tr>
-            <td>Ary</td>
-            <td>Cadena</td>
-            <td>ary@gmail.com</td>
-            <td>Active</td>
-            <td>
-                <img src="icons/edit.png" width="15">
-                <img src="icons/search.png" width="15">
-                <img src="icons/trash.png" width="15">
-            </td>
-        </tr>
+        
 
         <?php
             //Here code 
-            $sql="select";
+            $sql="select
+                id,
+                firstname,
+                lastname,
+                email,
+                case when status = true then'Active' else 'No active' end as status
+            from
+                users
+            ";
+
+        $res= pg_query($conn, $sql);
+
+        if(!$res){
+            echo"Query error";
+            exit;
+        }
+
+        while($row = pg_fetch_assoc($res) ){
+        echo "<tr>";
+        echo  "<td>".$row ['firstname']."</td>";
+        echo  "<td>".$row ['lastname']."</td>";
+        echo  "<td>".$row ['email']."</td>";
+        echo  "<td>".$row ['status']."</td>";
+        echo "<td align='center'><img src='photo_users/default.png' width='25'></td>";
+        echo  "<td>";
+        echo "<a href =''> <img src='icons/edit.png' width='15'>";
+        echo "<a href =''> <img src='icons/search.png' width='15'>";
+        echo "<a href ='http://127.0.0/schoolar/stc/delete.php'> <img src='icons/trash.png' width='15'>";
+        echo "</td>";
+        echo "</tr>";
+        }
         ?>
 
 
-    </table>
+ </table>
 </body>
 </html>

@@ -26,7 +26,7 @@ $sql_email_exist = "
 $res= pg_query($conn, $sql_email_exist);
 
 if($res){
-
+   
    $row = pg_fetch_assoc($res);
    if($row['total']>0){
       echo " Email already exist";
